@@ -8,6 +8,9 @@ module.exports = {
   },
   mode: "development",
   devtool: "inline-source-map",
+  devServer: {
+    static: "./dist",
+  },
   module: {
     rules: [
       {
@@ -33,5 +36,8 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.join(__dirname, "./dist"),
     clean: true,
+  },
+    optimization: {
+    runtimeChunk: 'single',
   },
 };
