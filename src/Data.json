@@ -1,0 +1,6 @@
+{
+  "frontend-frameworks": [
+    { "framework": "react.js" },
+    { "framework": "vue.js" }
+  ]
+}
