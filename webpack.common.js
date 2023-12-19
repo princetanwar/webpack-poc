@@ -7,10 +7,6 @@ module.exports = {
     print: "./src/print.js",
   },
   mode: "development",
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-  },
   module: {
     rules: [
       {
