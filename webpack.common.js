@@ -17,6 +17,13 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /[\\/]node_modules[\\/]/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
     ],
   },
   plugins: [
