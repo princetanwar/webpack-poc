@@ -37,7 +37,7 @@ module.exports = {
     path: path.join(__dirname, "./dist"),
     clean: true,
   },
-    optimization: {
-    runtimeChunk: 'single',
+  optimization: {
+    runtimeChunk: "single",
   },
 };
