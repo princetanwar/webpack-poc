@@ -1,10 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const BuildDirectoryPath = path.join(__dirname, "./dist");
+
 module.exports = {
   entry: {
-    index: "./src/index.js",
-    print: "./src/print.js",
+    indexPage: ["./src/index.js"],
+    secondPage: "./src/secondPage.js",
   },
   mode: "development",
   module: {
@@ -28,12 +30,21 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: true,
       title: "Webpack Management",
+      chunks: ["indexPage"],
+      filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      title: "second page title",
+      chunks: ["secondPage"],
+      filename: path.join(BuildDirectoryPath, "/second/index.html"),
     }),
   ],
   output: {
     filename: "[name].[contenthash].js",
-    path: path.join(__dirname, "./dist"),
+    path: BuildDirectoryPath,
     clean: true,
   },
   optimization: {
